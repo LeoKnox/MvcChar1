@@ -27,8 +27,7 @@ namespace MvcChar1
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<MvcChar1Context>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("MvcChar1Context")));
+            services.AddDbContext<MvcChar1Context>(options => options.UseSqlServer(Configuration.GetConnectionString("MvcChar1Context")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
