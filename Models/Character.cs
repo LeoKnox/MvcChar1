@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MvcChar1.Models
 {
-    public class Character
+    public class Char1
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -17,6 +19,7 @@ namespace MvcChar1.Models
         public int Con { get; set; }
         public int Dex { get; set; }
         public int Wis { get; set; }
+        [Display(Name = "Int")]
         public int Ine { get; set; }
         public int Cha { get; set; }
     }
