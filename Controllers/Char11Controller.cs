@@ -20,8 +20,12 @@ namespace MvcChar1.Controllers
         }
 
         // GET: Char11
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string char1Class, string searchString)
         {
+            IQueryable<string> classQuery = from m in _context.Char1
+                                            orderby m.Class
+                                            select m.Class;
+
             var chars = from c in _context.Char1
                         select c;
 
@@ -30,7 +34,17 @@ namespace MvcChar1.Controllers
                 chars = chars.Where(d => d.Name.Contains(searchString));
             }
 
-            return View(await chars.ToListAsync());
+            if (!string.IsNullOrEmpty(char1Class))
+            {
+                chars = chars.Where(f => f.Class == char1Class);
+            }
+
+            var char1ClassVM = new Char1ClassViewModel
+            {
+                Classes = new SelectList(await classQuery.Distinct().ToListAsync()),
+                Char1s = await chars.ToListAsync()
+            };
+            return View(char1ClassVM);
         }
 
         // GET: Char11/Details/5
