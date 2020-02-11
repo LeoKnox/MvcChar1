@@ -76,7 +76,7 @@ namespace MvcChar1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Class,Race,Ac,Hp,Str,Con,Dex,Wis,Ine,Cha")] Char1 char1)
+        public async Task<IActionResult> Create([Bind("Id,Name,Class,Race,Level,Ac,Hp,Str,Con,Dex,Wis,Ine,Cha")] Char1 char1)
         {
             if (ModelState.IsValid)
             {
@@ -108,7 +108,7 @@ namespace MvcChar1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Class,Race,Ac,Hp,Str,Con,Dex,Wis,Ine,Cha")] Char1 char1)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Class,Race,Level,Ac,Hp,Str,Con,Dex,Wis,Ine,Cha")] Char1 char1)
         {
             if (id != char1.Id)
             {

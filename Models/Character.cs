@@ -13,6 +13,7 @@ namespace MvcChar1.Models
         public string Name { get; set; }
         public string Class { get; set; }
         public string Race { get; set; }
+        public int Level { get; set; }
         public int Ac { get; set; }
         public int Hp { get; set; }
         public int Str { get; set; }
